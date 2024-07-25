@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Profitability Prediction</title>
+</head>
+<body>
+    <h1>Menu Profitability Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="MenuCategory">Menu Category:</label>
+        <select id="MenuCategory" name="MenuCategory">
+            <option value="Appetizers">Appetizers</option>
+            <option value="Main Courses">Main Courses</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Beverages">Beverages</option>
+        </select><br><br>
+        <label for="Price">Price:</label>
+        <input type="text" id="Price" name="Price"><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
